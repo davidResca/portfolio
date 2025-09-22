@@ -236,12 +236,12 @@
         </div>
         <div>
           <form id="contact-form">
-            <input type="text" name="nombre" required>
-            <input type="text" name="apellido" required>
-            <input type="email" name="email" required>
-            <textarea name="mensaje" required></textarea>
+            <input type="text" name="name" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Correo" required>
+            <textarea name="message" placeholder="Mensaje" required></textarea>
             <button type="submit">Enviar</button>
           </form>
+          <div id="status"></div>
         </div>
       </section>
 
@@ -264,8 +264,11 @@
         </article>
       </section>
     </section>
+
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init("ycIDLF6sk3FoCnLNb"); // reemplaza con tu Public Key
+    </script>
     <script src="./index.js"></script>
   </body>
 </html>
-
-<!-- "absolute w-[40%] left-[21%] top-[8%]" -->
