@@ -1,10 +1,11 @@
 @import url("./variables.css");
 
+/* ===== Background ===== */
 .bg-main {
   position: relative;
 }
 
-/* Barra fija */
+/* ===== Barra fija ===== */
 .nav-bar {
   width: 100dvw;
   padding: 0 16px;
@@ -26,46 +27,35 @@
   display: none;
 }
 
-/* Menú desplegable (afuera de nav-bar en el HTML) */
+/* Menú desplegable */
 .nav-bar-menu {
   position: fixed;
   top: 80px;
-  /* justo debajo de la barra */
   right: 0;
   width: 100%;
-
   display: flex;
   flex-direction: column;
   gap: 12px;
-
   padding: 24px 20px 48px 16px;
-
   z-index: 8;
-  /* debajo de la barra, pero arriba del contenido */
-
   text-align: end;
   text-transform: uppercase;
-
   font-size: 21px;
   font-weight: 700;
-  box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.2);
-
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
   color: rgb(0, 0, 0);
   background-color: rgba(0, 130, 54, 0.5);
-
   backdrop-filter: blur(8px);
-
   transition: all 0.2s ease, opacity 0.5s ease;
 }
 
-/* Estado cerrado */
+/* Estados del menú */
 .nav-closed {
   transform: translateY(-200%);
   opacity: 0;
   pointer-events: none;
 }
 
-/* Estado abierto */
 .nav-open {
   transform: translateY(0);
   opacity: 1;
@@ -79,19 +69,16 @@
   z-index: 99;
 }
 
-/* Botón hamburguesa oculto en desktop */
+/* Desktop */
 @media (min-width: 1024px) {
   .nav-bar {
     padding: 0 96px;
     height: 84px;
     max-height: 84px;
-    box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
   }
 
-  .burger-btn {
-    display: none;
-  }
-
+  .burger-btn,
   .nav-bar-menu {
     display: none;
   }
@@ -101,19 +88,15 @@
     justify-content: space-around;
     gap: 3rem;
     padding-bottom: 5px;
-
     height: 45px;
-
     text-align: center;
     text-transform: uppercase;
     font-family: var(--font-family-base);
     font-size: var(--font-text-size);
     font-weight: var(--font-navbar-weight);
     line-height: var(--font-navbar-line-height);
-
     list-style-type: none;
-
-    color: black;
+    color: rgb(0, 49, 21);
   }
 
   .nav-bar-link {
@@ -124,7 +107,7 @@
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    transition: all ease-in-out 0.3s;
+    transition: all 0.3s ease-in-out;
   }
 
   .nav-rectangle {
@@ -132,8 +115,8 @@
     top: 38px;
     width: 100%;
     height: 3px;
-    background-color: black;
-    transition: all ease-in-out 0.3s;
+    background-color: rgb(0, 49, 21);
+    transition: all 0.3s ease-in-out;
   }
 
   .nav-bar-link:hover a,
@@ -141,7 +124,7 @@
     position: relative;
     z-index: 10;
     color: white;
-    transition: all ease-in-out 0.5s;
+    transition: all 0.5s ease-in-out;
   }
 
   .nav-bar-link:hover .nav-rectangle,
@@ -150,29 +133,21 @@
     top: 0;
     z-index: 9;
     border-radius: 3px;
-    transition: all ease-in-out 0.3s;
+    transition: all 0.3s ease-in-out;
   }
 }
 
 .scrolled {
   background-color: var(--color-gobierno-azul-trans);
-  /* Color cuando se hace scroll */
   backdrop-filter: blur(2px);
-  transition: all ease-in 0.3s;
+  transition: all 0.3s ease-in;
 }
 
+/* ===== Cards ===== */
 .p-item {
   min-height: 350px;
-  transition: all ease-in-out 0.2s;
-}
-.p-item :hover {
-  transform: scale(1.01);
-  transition: all ease-in-out 0.2s;
-}
-
-.p-item {
+  transition: all 0.2s ease-in-out;
   min-width: 250px;
-  /* border: .5px solid black; */
   background-color: rgba(232, 243, 237, 0.2);
   padding: 24px 16px;
   border-radius: 8px;
@@ -182,20 +157,25 @@
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+.p-item:hover {
+  transform: scale(1.01);
+  transition: all 0.2s ease-in-out;
+}
+
 .p-item p {
   font-size: 14px;
   max-width: 20ch;
   margin-top: 36px;
 }
 
-/* Formulario Contacto */
+/* ===== Formulario Contacto ===== */
 form {
   font-family: "Poppins", sans-serif;
   background-color: #ffffff;
   padding: 24px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  max-width: 400px;
+  max-width: 600px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -246,4 +226,36 @@ form button {
 
 form button:hover {
   background-color: #15803d;
+}
+
+/* ===== Validaciones ===== */
+form input.invalid,
+form textarea.invalid {
+  border: 2px solid red !important;
+}
+
+form input.valid,
+form textarea.valid {
+  border: 2px solid green !important;
+}
+
+@media (min-width: 1024px) {
+  #contacto {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  form {
+    width: 600px;
+  }
+
+  .contact-text {
+    font-size: 24px!important;
+  }
+}
+
+.contact-text {
+  font-size: 14px;
 }
