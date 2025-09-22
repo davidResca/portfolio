@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./index.css">
+    <title>David Resca - DevCard</title>
+  </head>
+  <body id="top" class="w-screen flex flex-col items-center bg-slate-300 py-10 px-6 lg:p-[96px]">
+    <header>
+        <div class="container-padding nav-bar">
+            <!-- marca -->
+            <div class="flex flex-col justify-evenly items-center">
+              <a href="#top">
+                <div class="flex tracking-tighter antialiased">
+                  <h2 class="text-green-700 text-3xl font-poppins font-semibold">
+                    David
+                  </h2>
+                  <h2 class="text-black text-3xl font-poppins">Resca</h2>
+                </div>
+                <h3 class="text-xs tracking-tight font-medium font-poppins -my-2">Frontend Dev · Neuquén · Arg</h3>
+              </a>
+            </div>
+            <!-- burger button -->
+            <div id="burger-btn" class="burger-btn">
+                <img src="./assets/icons/hamb.svg" alt="">
+            </div>
+
+            <div class="nav-bar-links">
+                <li class="nav-bar-link">
+                    <a href="#proyectos">proyectos</a>
+                    <div class="nav-rectangle"></div>
+                </li>
+                <li class="nav-bar-link">
+                    <a href="#contacto">contacto</a>
+                    <div class="nav-rectangle"></div>
+                </li>
+            </div>
+        </div>
+
+        <!-- menu afuera de nav-bar -->
+        <ul id="nav-menu" class="nav-bar-menu nav-closed">
+            <li><a href="#proyectos">proyectos</a></li>
+            <li><a href="#contacto">contacto</a></li>
+        </ul>
+    </header>
+
+    <section class="h-full flex flex-col justify-between overflow-hidden bg-slate-50 py-12 px-6 lg:px-[48px] rounded-t-xl max-w-[1200px] mt-[90px]">
+      <!-- title -->
+      <section class="flex flex-col justify-evenly items-center">
+        <div class="flex tracking-tighter antialiased">
+          <h2 class="text-green-700 text-5xl font-poppins font-semibold">
+            David
+          </h2>
+          <h2 class="text-black text-5xl font-poppins">Resca</h2>
+        </div>
+        <h3 class="text-xl tracking-tight font-medium font-poppins -my-2">Frontend Dev · Neuquén · Arg</h3>
+      </section>
+      <!-- desc, tech, pic, proy -->
+      <div class="mt-12">
+        <div class="flex flex-col justify-evenly items-center lg:flex-row-reverse">
+          <div class="flex flex-col lg:justify-center">
+            <!-- descripción -->
+            <p class="text-start font-poppins py-12 lg:py-6 max-w-[350px]">
+              Frontend developer enfocado en crear interfaces web intuitivas,
+              atractivas y de alto impacto. Transformo necesidades de negocio y de
+              usuarios en código funcional, asegurando que cada interacción
+              impulse la experiencia y el compromiso.
+            </p>
+            <!-- tecnologias -->
+            <div class="flex flex-col items-center lg:items-start gap-6">
+              <!-- <h4 class="font-semibold text-lg font-poppins text-left">
+                Working with Technologies:
+              </h4> -->
+              <div class="flex flex-col gap-4">
+                <div class="flex justify-start gap-6">
+                  <img class="w-10" src="./assets/icons/raphael--js.svg" alt="" />
+                  <!-- <img class="w-10" src="./assets/icons/file-icons--vite.svg" alt=""> -->
+                  <!-- <img class="w-10" src="./assets/icons/vscode-icons--file-type-light-expo.svg" alt=""> -->
+                  <img
+                    class="w-10"
+                    src="./assets/icons/akar-icons--html-fill.svg"
+                    alt=""
+                  />
+                  <img
+                    class="w-10"
+                    src="./assets/icons/akar-icons--css-fill.svg"
+                    alt=""
+                  />
+                  <img
+                    class="w-10"
+                    src="./assets/icons/flowbite--react-solid.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="flex justify-start gap-6">
+                  <img
+                    class="w-10"
+                    src="./assets/icons/fa6-brands--sass.svg"
+                    alt=""
+                  />
+                  <img
+                    class="w-10"
+                    src="./assets/icons/file-icons--tailwind.svg"
+                    alt=""
+                  />
+                  <img
+                    class="w-10"
+                    src="./assets/icons/devicon-plain--bootstrap-wordmark.svg"
+                    alt=""
+                  />
+                  <img class="w-10" src="./assets/icons/git.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- avt img -->
+          <div class="flex justify-center py-12">
+            <img
+              class="max-w-2xs object-cover rounded-xl"
+              src="./assets/images/ownph.jpeg"
+              alt=""
+            />
+          </div>
+        </div>
+        <!-- proyectos -->
+        <div id="proyectos" class="flex flex-col justify-evenly items-center gap-12">
+          <h4 class="font-semibold text-lg font-poppins text-left">Proyectos:</h4>
+          <div class="flex flex-wrap gap-6 justify-center">
+            <div class="p-item mb-12">
+              <a href="https://block-travel-landing.vercel.app/" target="_blank">
+                <img class="w-[150px] object-cover proj-img" src="assets\icons\brand-BTA.svg" alt="block travel agency">
+              </a>
+              <p class="w-[275px] py-2">Block Travel Agency: landing page de empresa de viajes. Tecnologías utilizadas:</p>
+              <div class="flex justify-start items-center py-4 gap-4">
+                <img class="w-8" src="./assets/icons/akar-icons--html-fill.svg" alt="html" />
+                <img class="w-8" src="./assets/icons/raphael--js.svg" alt="js" />
+                <img class="w-8" src="./assets/icons/akar-icons--css-fill.svg" alt="css"/>
+                <img class="w-8" src="./assets/icons/fa6-brands--sass.svg" alt="sass" />
+              </div>
+            </div>
+            <div class="p-item mb-12">
+              <a href="https://bta-001.web.app/" target="_blank">
+                <img class="w-[150px] object-cover proj-img" src="assets\icons\brand-BTA.svg" alt="block travel agency">    
+                <p class="w-[275px] py-2"> BTA: Web App desarrollada en React js. Backend con Firebase (Firestore) con envío de mail a la compañía con la consulta del usuario mediante Email.js</p>
+                <div class="flex justify-start items-center py-4 gap-4">
+                  <img class="w-8" src="./assets/icons/akar-icons--css-fill.svg" alt="css"/>
+                  <img class="w-8" src="./assets/icons/flowbite--react-solid.svg" alt="react js"/>
+                </div>
+              </a>
+            </div>
+            <div class="p-item mb-12">
+              <a href="https://kaa-tech.com/" target="_blank">
+                <img class="w-[150px] object-cover proj-img" src="assets\icons\brand-kaatech.svg" alt="kaatech">
+                <p class="w-[275px] py-2">Front-end para Kaatech: Empresa de Biotecnología, ubicada en el Alto Valle Neuquino. Tecnologías utilizadas:</p>
+                <div class="flex justify-start items-center py-4 gap-4">
+                  <img class="w-8" src="./assets/icons/akar-icons--html-fill.svg" alt="html" />
+                  <img class="w-8" src="./assets/icons/raphael--js.svg" alt="js" />
+                  <img class="w-8" src="./assets/icons/akar-icons--css-fill.svg" alt="css"/>
+                  <img class="w-8" src="./assets/icons/fa6-brands--sass.svg" alt="sass" />
+                </div>
+              </a>
+            </div>
+            <div class="p-item mb-12">
+              <a href="https://www.distryser.com.ar/">
+                <img class="w-[150px] object-cover proj-img" src="assets\icons\brand-distryser.png" alt="distryser">
+                <p class="w-[275px] py-2">Front-end para distribuidora mayorista de autopartes de Neuquén. Tecnologías utilizadas:</p>
+                <div class="flex justify-start items-center py-4 gap-4">
+                  <img class="w-8" src="./assets/icons/akar-icons--html-fill.svg" alt="html" />
+                  <img class="w-8" src="./assets/icons/raphael--js.svg" alt="js" />
+                  <img class="w-8" src="./assets/icons/akar-icons--css-fill.svg" alt="css"/>
+                  <img class="w-8" src="./assets/icons/fa6-brands--sass.svg" alt="sass" />
+                </div>
+              </a>
+            </div>
+            <div class="p-item mb-12">
+              <a href="https://whales-one.vercel.app/" target="_blank">
+                <img class="w-[150px] object-cover proj-img" src="./assets/icons/brand-whale.png" alt="crypto arte">
+                <p class="w-[275px] py-2">Proyecto didáctico para curso orientado a frontend con JavaScript.</p>
+                <div class="flex justify-start items-center py-4 gap-4">
+                  <img class="w-8" src="./assets/icons/akar-icons--html-fill.svg" alt="html" />
+                  <img class="w-8" src="./assets/icons/raphael--js.svg" alt="js" />
+                  <img class="w-8" src="./assets/icons/akar-icons--css-fill.svg" alt="css"/>
+                  <img class="w-8" src="./assets/icons/fa6-brands--sass.svg" alt="sass" />
+                </div>
+              </a>
+            </div>
+            <div class="p-item mb-12">
+              <a href="https://mamayoquiero.vercel.app/">
+                <img class="w-[150px] object-cover proj-img" src="./assets/icons/brand-mamayoquiero.png" alt="mama yo quiero">
+                <p class="w-[275px] py-2">Landing page para emprendimiento que provee moldes de silicona, herramientas e insumos para productos de pastelería y porcelana fría.</p>
+                <div class="flex justify-start items-center py-4 gap-4">
+                  <img class="w-8" src="./assets/icons/akar-icons--html-fill.svg" alt="html" />
+                  <img class="w-8" src="./assets/icons/raphael--js.svg" alt="js" />
+                  <img class="w-8" src="./assets/icons/akar-icons--css-fill.svg" alt="css"/>
+                  <img class="w-8" src="./assets/icons/fa6-brands--sass.svg" alt="sass" />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="flex flex-col justify-between gap-6 w-full max-w-[1200px]">
+      <section id="contacto" class="flex flex-col justify-end bg-green-700 p-6 gap-4">
+        <!-- MAIL -->
+        <article class="">
+          <div class="flex gap-2 items-center">
+            <img
+              class="mr-1"
+              src="./assets/icons/email-icon.svg"
+              alt="email"
+            />
+            <div class="text-white font-poppins text-lg">Email</div>
+          </div>
+          <p class="text-white font-poppins text-lg">davidresca9@gmail.com</p>
+        </article>
+
+        <!-- PHONE -->
+        <article>
+          <div class="flex gap-2 items-center">
+            <img
+              class="mr-1"
+              src="./assets/icons/phone-icon.svg"
+              alt="phone"
+            />
+            <div class="text-white font-poppins text-lg">Phone</div>
+          </div>
+          <p class="text-white font-poppins text-lg">(+54) 9 221 6223637</p>
+        </article>
+      </section>
+
+      <section class="bg-green-700 p-4 rounded-b-xl">
+        <!-- RRSS -->
+        <article class="flex flex-col justify-center items-center gap-2">
+          <p class="text-white font-poppins text-2xl">Find me on:</p>
+          <div class="flex gap-6 p-2">
+            <img
+              class="w-10"
+              src="./assets/icons/github-icon.svg"
+              alt="github"
+            />
+            <img
+              class="w-10"
+              src="./assets/icons/linkedin-icon.svg"
+              alt="linkedin"
+            />
+          </div>
+        </article>
+      </section>
+    </section>
+    <script src="./src/index.js"></script>
+  </body>
+</html>
+
+<!-- "absolute w-[40%] left-[21%] top-[8%]" -->
