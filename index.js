@@ -24,3 +24,23 @@ document.addEventListener('click', (e) => {
     navMenu.classList.add('nav-closed');
   }
 });
+
+
+
+
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const formData = Object.fromEntries(new FormData(form));
+  
+  const res = await fetch("/api/send", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData)
+  });
+
+  const data = await res.json();
+  alert(data.message);
+});

@@ -1,192 +1,249 @@
 @import url("./variables.css");
 
 .bg-main {
-    position: relative;
+  position: relative;
 }
 
 /* Barra fija */
 .nav-bar {
-    width: 100dvw;
-    padding: 0 16px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 84px;
-    z-index: 99;
-    color: white;
-    background-color: rgba(0, 130, 54, .5);
-    backdrop-filter: blur(8px);
+  width: 100dvw;
+  padding: 0 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 84px;
+  z-index: 99;
+  color: white;
+  background-color: rgba(0, 130, 54, 0.5);
+  backdrop-filter: blur(8px);
 }
 
 .nav-bar-links {
-    display: none;
+  display: none;
 }
 
 /* Menú desplegable (afuera de nav-bar en el HTML) */
 .nav-bar-menu {
-    position: fixed;
-    top: 80px;
-    /* justo debajo de la barra */
-    right: 0;
-    width: 100%;
+  position: fixed;
+  top: 80px;
+  /* justo debajo de la barra */
+  right: 0;
+  width: 100%;
 
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 
-    padding: 24px 20px 48px 16px;
+  padding: 24px 20px 48px 16px;
 
-    z-index: 8;
-    /* debajo de la barra, pero arriba del contenido */
+  z-index: 8;
+  /* debajo de la barra, pero arriba del contenido */
 
-    text-align: end;
-    text-transform: uppercase;
-    
-    font-size: 21px;
-    font-weight: 700;
-    box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.2);
+  text-align: end;
+  text-transform: uppercase;
 
-    color: rgb(0, 0, 0);
-    background-color: rgba(0, 130, 54, .5);
+  font-size: 21px;
+  font-weight: 700;
+  box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.2);
 
-    backdrop-filter: blur(8px);
+  color: rgb(0, 0, 0);
+  background-color: rgba(0, 130, 54, 0.5);
 
-    transition: all 0.2s ease, opacity 0.5s ease;
+  backdrop-filter: blur(8px);
+
+  transition: all 0.2s ease, opacity 0.5s ease;
 }
 
 /* Estado cerrado */
 .nav-closed {
-    transform: translateY(-200%);
-    opacity: 0;
-    pointer-events: none;
+  transform: translateY(-200%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Estado abierto */
 .nav-open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .burger-btn {
-    width: 25px;
-    overflow: hidden;
-    position: relative;
-    z-index: 99;
+  width: 25px;
+  overflow: hidden;
+  position: relative;
+  z-index: 99;
 }
 
 /* Botón hamburguesa oculto en desktop */
-@media(min-width: 1024px) {
-    .nav-bar {
-        padding: 0 96px;
-        height: 84px;
-        max-height: 84px;
-        box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.2);
-    }
+@media (min-width: 1024px) {
+  .nav-bar {
+    padding: 0 96px;
+    height: 84px;
+    max-height: 84px;
+    box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.2);
+  }
 
-    .burger-btn {
-        display: none;
-    }
+  .burger-btn {
+    display: none;
+  }
 
-    .nav-bar-menu {
-        display: none;
-    }
+  .nav-bar-menu {
+    display: none;
+  }
 
-    .nav-bar-links {
-        display: flex;
-        justify-content: space-around;
-        gap: 3rem;
-        padding-bottom: 5px;
+  .nav-bar-links {
+    display: flex;
+    justify-content: space-around;
+    gap: 3rem;
+    padding-bottom: 5px;
 
-        height: 45px;
+    height: 45px;
 
-        text-align: center;
-        text-transform: uppercase;
-        font-family: var(--font-family-base);
-        font-size: var(--font-text-size);
-        font-weight: var(--font-navbar-weight);
-        line-height: var(--font-navbar-line-height);
+    text-align: center;
+    text-transform: uppercase;
+    font-family: var(--font-family-base);
+    font-size: var(--font-text-size);
+    font-weight: var(--font-navbar-weight);
+    line-height: var(--font-navbar-line-height);
 
-        list-style-type: none;
+    list-style-type: none;
 
-        color: var(--color-gobierno-beige-oscuro);
-    }
+    color: var(--color-gobierno-beige-oscuro);
+  }
 
-    .nav-bar-link {
-        padding: 0 15px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: .5rem;
-        transition: all ease-in-out .3s;
-    }
+  .nav-bar-link {
+    padding: 0 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all ease-in-out 0.3s;
+  }
 
-    .nav-rectangle {
-        position: absolute;
-        top: 38px;
-        width: 100%;
-        height: 3px;
-        background-color: var(--color-gobierno-beige-oscuro);
-        transition: all ease-in-out .3s;
-    }
+  .nav-rectangle {
+    position: absolute;
+    top: 38px;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-gobierno-beige-oscuro);
+    transition: all ease-in-out 0.3s;
+  }
 
-    .nav-bar-link:hover a,
-    .nav-bar-link.active a {
-        position: relative;
-        z-index: 10;
-        color: var(--color-gobierno-azul);
-        transition: all ease-in-out .5s;
-    }
+  .nav-bar-link:hover a,
+  .nav-bar-link.active a {
+    position: relative;
+    z-index: 10;
+    color: var(--color-gobierno-azul);
+    transition: all ease-in-out 0.5s;
+  }
 
-    .nav-bar-link:hover .nav-rectangle,
-    .nav-bar-link.active .nav-rectangle {
-        height: 100%;
-        top: 0;
-        z-index: 9;
-        border-radius: 3px;
-        transition: all ease-in-out .3s;
-    }
+  .nav-bar-link:hover .nav-rectangle,
+  .nav-bar-link.active .nav-rectangle {
+    height: 100%;
+    top: 0;
+    z-index: 9;
+    border-radius: 3px;
+    transition: all ease-in-out 0.3s;
+  }
 }
 
 .scrolled {
-    background-color: var(--color-gobierno-azul-trans);
-    /* Color cuando se hace scroll */
-    backdrop-filter: blur(2px);
-    transition: all ease-in .3s;
+  background-color: var(--color-gobierno-azul-trans);
+  /* Color cuando se hace scroll */
+  backdrop-filter: blur(2px);
+  transition: all ease-in 0.3s;
 }
-
 
 .p-item {
-    min-height: 350px;
-    transition: all ease-in-out .2s;
+  min-height: 350px;
+  transition: all ease-in-out 0.2s;
 }
-.p-item :hover{
-    transform: scale(1.01);
-    transition: all ease-in-out .2s;
-}
-
-
-.p-item{
-    min-width: 250px;
-    /* border: .5px solid black; */
-    background-color: rgba(232, 243, 237, .2);
-    padding: 24px 16px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, .1);
+.p-item :hover {
+  transform: scale(1.01);
+  transition: all ease-in-out 0.2s;
 }
 
-.p-item p{
-    font-size: 14px;
-    max-width: 20ch;
-    margin-top: 36px;
+.p-item {
+  min-width: 250px;
+  /* border: .5px solid black; */
+  background-color: rgba(232, 243, 237, 0.2);
+  padding: 24px 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+.p-item p {
+  font-size: 14px;
+  max-width: 20ch;
+  margin-top: 36px;
+}
+
+/* Formulario Contacto */
+form {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+form label {
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 4px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+  border-color: #16a34a; /* verde */
+  outline: none;
+  box-shadow: 0 0 6px rgba(22, 163, 74, 0.3);
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+form button {
+  padding: 12px;
+  background-color: #16a34a;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background-color: #15803d;
+}

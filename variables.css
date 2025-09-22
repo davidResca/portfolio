@@ -1,0 +1,94 @@
+:root {
+  /* Gobierno */
+  --color-gobierno-azul: #2b3e4c;
+  --color-gobierno-azul-trans: #2b3e4cf3;
+  --color-gobierno-verde: #87b867;
+  --color-gobierno-beige-oscuro: #f4dfb9;
+  --color-gobierno-beige-claro: #fcf2dc;
+
+  /* Domuyo */
+  --color-domuyo-naranja: #ef583f;
+  --color-duam-celeste: #5199a8;
+  --color-duam-verdeagua: #01AEB2;
+  --color-rucache-magenta: #BB447C;
+  --color-domuyo-violeta: #905aba;
+  --color-domuyo-azul: #17456E;
+  --color-domuyo-verde: #a3a307;
+  --color-domuyo-fondo: #f7f6f0;
+
+  /* Gradientes */
+  --gradiente-rucache: linear-gradient(180deg, #2b3e4c 0%, #87b867 100%);
+  --gradiente-duam: linear-gradient(180deg, #2b3e4c 0%, #f4dfb9 100%);
+  --gradiente-duam-card: linear-gradient(209.36deg, #2B3E4C 0%, #EDD8B1 100%);
+  ;
+
+  /* Textos */
+  --color-text-white: #ffffff;
+  --color-text-black: #1b1b1b;
+  --color-text-gray: #565656;
+
+  /* Tipografía */
+  --font-family-base: "Manrope", sans-serif;
+
+  /* Tamaños, pesos y line-height */
+
+
+  /* section label */
+  --font-label-size: 17px;
+  --font-label-weight: 400;
+  --font-label-line-height: 150%;
+
+  /* section title */
+  --font-title-size: 21px;
+  --font-title-weight: 500;
+  --font-title-line-height: 164%;
+
+  /* section subtitle */
+  --font-subtitle-size: 17px;
+  --font-subtitle-weight: 400;
+  --font-subtitle-line-height: 150%;
+
+  /* section text */
+  --font-text-size: 14px;
+  --font-text-weight: 400;
+  --font-text-line-height: 174%;
+
+  /* section hero */
+  --font-hero-size: 48px;
+  --font-hero-weight-bold: 800;
+  --font-hero-line-height: 124%;
+
+
+  /* aproximado */
+  --font-txt-size: 14px;
+  --font-regular-weight: 400;
+  --font-txt-line-height: 174%;
+
+  --font-title-dsk-size: 32px;
+  --font-title-dsk-weight: 500;
+  --font-title-dsk-line-height: 164%;
+
+  --font-footer-main-size: 16px;
+  --font-footer-main-weight: 400;
+  --font-footer-main-line-height: 150%;
+
+  --font-form-hint-size: 12px;
+  --font-form-hint-weight: 400;
+  --font-form-hint-line-height: 164%;
+
+  /* Navbar */
+  --font-navbar-size: 27px;
+  --font-navbar-weight: 700;
+  --font-navbar-line-height: 100%;
+
+  /* cards espacios */
+  /* header */
+  --font-card-subtitle-size: 16px;
+  --font-card-subtitle-weight: 500;
+  --font-card-subtitle-line-height: 150%;
+  /* texto y btn */
+  --font-card-text-size: 14px;
+  --font-card-text-weight: 400;
+  --font-card-text-weight-bold: 700;
+  --font-card-text-line-height: 174%;
+}

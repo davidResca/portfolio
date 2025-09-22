@@ -208,31 +208,41 @@
     </section>
     <section class="flex flex-col justify-between gap-6 w-full max-w-[1200px]">
       <section id="contacto" class="flex flex-col justify-end bg-green-700 p-6 gap-4">
-        <!-- MAIL -->
-        <article class="">
-          <div class="flex gap-2 items-center">
-            <img
-              class="mr-1"
-              src="./assets/icons/email-icon.svg"
-              alt="email"
-            />
-            <div class="text-white font-poppins text-lg">Email</div>
-          </div>
-          <p class="text-white font-poppins text-lg">davidresca9@gmail.com</p>
-        </article>
-
-        <!-- PHONE -->
-        <article>
-          <div class="flex gap-2 items-center">
-            <img
-              class="mr-1"
-              src="./assets/icons/phone-icon.svg"
-              alt="phone"
-            />
-            <div class="text-white font-poppins text-lg">Phone</div>
-          </div>
-          <p class="text-white font-poppins text-lg">(+54) 9 221 6223637</p>
-        </article>
+        <div>
+          <!-- MAIL -->
+          <article class="">
+           <div class="flex gap-2 items-center">
+             <img
+               class="mr-1"
+               src="./assets/icons/email-icon.svg"
+               alt="email"
+             />
+             <div class="text-white font-poppins text-lg">Email</div>
+           </div>
+           <p class="text-white font-poppins text-lg">davidresca9@gmail.com</p>
+          </article>
+          <!-- PHONE -->
+          <article>
+           <div class="flex gap-2 items-center">
+             <img
+               class="mr-1"
+               src="./assets/icons/phone-icon.svg"
+               alt="phone"
+             />
+             <div class="text-white font-poppins text-lg">Phone</div>
+           </div>
+           <p class="text-white font-poppins text-lg">(+54) 9 221 6223637</p>
+          </article>
+        </div>
+        <div>
+          <form id="contact-form">
+            <input type="text" name="nombre" required>
+            <input type="text" name="apellido" required>
+            <input type="email" name="email" required>
+            <textarea name="mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
       </section>
 
       <section class="bg-green-700 p-4 rounded-b-xl">
@@ -254,7 +264,7 @@
         </article>
       </section>
     </section>
-    <script src="./src/index.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
 
