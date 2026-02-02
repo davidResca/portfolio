@@ -259,3 +259,8 @@ form textarea.valid {
 .contact-text {
   font-size: 14px;
 }
+
+.bg-oscuro{
+  background-color: rgba(165, 188, 241, 0.4);
+  /* background-color: rgba(35, 165, 5, 0.2); */
+}
