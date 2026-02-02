@@ -25,58 +25,59 @@ document.addEventListener('click', (e) => {
   }
 });
 
+const btn = document.querySelector('#contact-form button[type="submit"]');
 const form = document.getElementById('contact-form');
-const statusMsg = document.getElementById('status');
 
 form.addEventListener('submit', function(event) {
-    event.preventDefault();
+   event.preventDefault();
 
-    const name = form.name;
-    const email = form.email;
-    const message = form.message;
+   const trap = document.getElementById('honeypot_field');
+   if (trap.value !== "") {
+       console.log("Bot detectado. Envío cancelado.");
+       return;
+   }
 
-    let isValid = true;
+   const lastEmailTime = localStorage.getItem('lastEmailTime');
+   const now = Date.now();
+   
 
-    // Reset clases
-    [name, email, message].forEach(field => {
-        field.classList.remove('invalid', 'valid');
+   if (lastEmailTime && (now - lastEmailTime) < 60000) {
+       alert('Por favor espera un minuto antes de enviar otro mensaje.');
+       return;
+   }
+
+
+
+   const textoOriginal = btn.textContent;
+   btn.textContent = 'Enviando...';
+   btn.disabled = true; 
+
+   const serviceID = 'service_9o15rcr'; 
+   const templateID = 'template_x9c6q1r';
+
+   const params = {
+       name: this.name.value,
+       email: this.email.value,
+       message: this.message.value
+   };
+
+   emailjs.send(serviceID, templateID, params)
+    .then(() => {
+       btn.textContent = 'Enviado';
+       alert('¡Mensaje enviado correctamente!');
+       form.reset();
+       
+       // Guardamos la hora del envío
+       localStorage.setItem('lastEmailTime', Date.now());
+
+       setTimeout(() => {
+           btn.textContent = textoOriginal;
+           btn.disabled = false;
+       }, 2000);
+    }, (err) => {
+       btn.textContent = textoOriginal;
+       btn.disabled = false;
+       alert('Ocurrió un error. Intenta nuevamente.');
+       console.error(err);
     });
-
-    // Validaciones
-    if (!/^[a-zA-Z\s]{2,}$/.test(name.value.trim())) {
-        name.classList.add('invalid');
-        isValid = false;
-    } else {
-        name.classList.add('valid');
-    }
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
-        email.classList.add('invalid');
-        isValid = false;
-    } else {
-        email.classList.add('valid');
-    }
-
-    if (message.value.trim().length < 10 || message.value.trim().length > 500) {
-        message.classList.add('invalid');
-        isValid = false;
-    } else {
-        message.classList.add('valid');
-    }
-
-    if (!isValid) {
-        statusMsg.innerText = "Por favor corrige los campos resaltados.";
-        return;
-    }
-
-    // Enviar si todo está correcto
-    emailjs.sendForm('service_7na1op7', 'template_79j5pgk', this)
-        .then(() => {
-            statusMsg.innerText = "Correo enviado ✅";
-            form.reset();
-            [name, email, message].forEach(field => field.classList.remove('valid'));
-        }, (error) => {
-            statusMsg.innerText = "Error al enviar ❌";
-            console.error(error);
-        });
 });
